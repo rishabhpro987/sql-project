@@ -159,14 +159,14 @@ WITH RANKING_ARTIST
 	SELECT * FROM RANKING_ARTIST
 	WHERE RANK <=3;
 ```
-3. Write a query to find tracks where the liveness score is above the average.
+2. Write a query to find tracks where the liveness score is above the average.
 ```sql
 SELECT TRACK, LIVENESS
 	FROM SPOTIFY
 	WHERE LIVENESS >= (SELECT AVG(LIVENESS) FROM SPOTIFY)
 	ORDER BY 2 DESC;
 ```
-5. **Use a `WITH` clause to calculate the difference between the highest and lowest energy values for tracks in each album.**
+3. **Use a `WITH` clause to calculate the difference between the highest and lowest energy values for tracks in each album.**
 ```sql
 WITH cte
 AS
@@ -184,7 +184,7 @@ FROM cte
 ORDER BY 2 DESC
 ```
    
-5. Find tracks where the energy-to-liveness ratio is greater than 1.2.
+4. Find tracks where the energy-to-liveness ratio is greater than 1.2.
 ```sql
 WITH CTE
 	AS
@@ -196,7 +196,7 @@ WITH CTE
 	WHERE RATIO >= 1.2
 	ORDER BY 2 DESC;
 ```
-7. Calculate the cumulative sum of likes for tracks ordered by the number of views, using window functions.
+5. Calculate the cumulative sum of likes for tracks ordered by the number of views, using window functions.
 ```sql
 SELECT TRACK,LIKES, SUM(LIKES) OVER (ORDER BY VIEWS DESC) AS CUMMILATIVE_SERIES
 	FROM SPOTIFY
@@ -204,7 +204,7 @@ SELECT TRACK,LIKES, SUM(LIKES) OVER (ORDER BY VIEWS DESC) AS CUMMILATIVE_SERIES
 ```
 
 
-Here’s an updated section for your **Spotify Advanced SQL Project and Query Optimization** README, focusing on the query optimization task you performed. You can include the specific screenshots and graphs as described.
+Here’s an updated section for your **Spotify Advanced SQL Project** README, focusing on the query optimization task you performed. You can include the specific screenshots and graphs as described.
 
 ---
 
